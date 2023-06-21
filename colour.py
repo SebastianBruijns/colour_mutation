@@ -23,7 +23,7 @@ for step in range(steps[-1]):
 			if 0 <= x + neigh[0] < n and 0 <= y + neigh[1] < m:
 				if (colours[x + neigh[0], y + neigh[1]] == np.zeros(3)).all():
 					if np.random.rand() < propagation_chance:
-						colours[x + neigh[0], y + neigh[1]] = colours[x, y] + np.random.rand(3) * step_size
+						colours[x + neigh[0], y + neigh[1]] = colours[x, y] + np.random.rand(3) * step_size - step_size / 2
 	colours = colours % 1
 	if step in steps:
 		plt.imshow(colours)
