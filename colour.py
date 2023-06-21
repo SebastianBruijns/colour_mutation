@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-n, m = 45, 80
+n, m = 90, 160
 steps = [1, 10, 25, 40, 55, 70, 85]
 propagation_chance = 0.5
 step_size = 0.05
 
 colours = np.zeros((n, m, 3))
-colours[n // 2, m // 2] = 0.5
+colours[n // 2, m // 2] = [0.1, 0.5, 0.3]
 
 neigbhours = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 
@@ -26,5 +26,6 @@ for step in range(steps[-1]):
 						colours[x + neigh[0], y + neigh[1]] = colours[x, y] + np.random.rand(3) * step_size - step_size / 2
 	colours = colours % 1
 	if step in steps:
-		plt.imshow(colours)
+		plt.imshow(colours, vmin=0, vmax=1)
+		plt.savefig(str(step))
 		plt.show()
