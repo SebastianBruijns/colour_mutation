@@ -1,1 +1,1 @@
-[View raw file](https://github.com/SebastianBruijns/colour_mutation/blob/master/colours.gif)
+![](https://github.com/SebastianBruijns/colour_mutation/blob/master/colours.gif)
